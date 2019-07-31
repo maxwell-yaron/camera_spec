@@ -2,6 +2,6 @@
 
 Utility to facilitate camera sensor and lens selection
 
-[selector]
+[Selector]
 
-[selector]: http://htmlpreview.github.com/?https://github.com/maxwell-yaron/camera_spec/blob/master/index.html
+[Selector]: https://maxwell-yaron.github.io/camera_spec/
