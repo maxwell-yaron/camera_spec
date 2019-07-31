@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/256px-HAL9000.svg.png"/>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="load_json.js"></script>
     <script src="fov.js"></script>
     <script>
@@ -14,7 +14,6 @@
       var sensor_config = "sensors.json";
       loadJSON(sensor_config, function(data) {
           sensors = JSON.parse(data);
-          console.log(sensors);
           });
     }
     init();
