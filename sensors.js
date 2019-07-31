@@ -94,14 +94,6 @@ var sensors = {
       "datasheet":"https://publiclab.org/system/images/photos/000/023/294/original/RASPBERRY_PI_CAMERA_V2_DATASHEET_IMX219PQH5_7.0.0_Datasheet_XXX.PDF",
       "dynamic_range":55.4,
       "readout":"rolling"
-    },
-    "IMX249":{
-      "pxsize":5.86,
-      "width":1920,
-      "height":1200,
-      "datasheet":"https://www.sony-semicon.co.jp/products_en/IS/sensor0/img/product/cmos/IMX249LQJ_LLJ_Flyer.pdf",
-      "dynamic_range":null,
-      "readout":"global"
     }
   }
 };
