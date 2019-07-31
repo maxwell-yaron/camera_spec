@@ -1,0 +1,106 @@
+.sidebar {
+  height: 100%;
+  width: 0; 
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #010101;
+  transition: 0.5s;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+.sidebar span {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #B0B0B0;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar td {
+  text-decoration: none;
+  font-size: 12px;
+  color: #ACDBDF;
+  transition: 0.3s;
+}
+.sidebar h3 {
+  text-decoration: none;
+  font-size: 16px;
+  color: #ACDBDF;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a {
+  text-decoration: none;
+  font-size: 12px;
+  color: #ACDBDF;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar .a:hover {
+  color: #69779B;
+}
+
+.sidebar .entry {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #F0ECE2;
+  display: block;
+  transition: 0.3s;
+  text-indent: 20px;
+}
+.sidebar .info_div {
+  position: absolute;
+  left:5px;
+  right:5px;
+  height: 300px;
+  overflow: auto;
+  background-color: #444444;
+}
+.sidebar .camera_info {
+  font-size: 12px;
+  color: #FFFFFF;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar .entry:hover {
+  color: #69779B;
+  cursor: pointer;
+}
+.sidebar .entry:active {
+  color: #ACDBDF;
+  cursor: pointer;
+  transform: translateY(2px);
+}
+.sidebar .closebtn:hover {
+  color: #69779B;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #F0ECE2;
+  display: block;
+  transition: 0.3s;
+}
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #010101;
+  color: white;
+  padding: 5px 10px;
+  border: solid 1px #ACDBDF;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+#menu_open {
+  transition: margin-left .5s;
+  padding: 16px;
+}

@@ -1,0 +1,26 @@
+body {
+  background-color: #202020;
+  font-family: "Lato", sans-serif;
+}
+input {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  text-align: center;
+}
+.anglefinder {
+  margin-left: 50px;
+  border:none;
+  color: #F0ECE2;
+  width: 400px;
+}
+.selection {
+  width: 300px;
+  border: none;
+  color: #F0ECE2;
+  padding: 5px;
+  margin: 5px;
+}
+

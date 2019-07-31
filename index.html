@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Camera Spec</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/HAL9000.svg/256px-HAL9000.svg.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="load_json.js"></script>
+    <script src="fov.js"></script>
+    <script>
+    var sensors = "";
+    function init() {
+      var sensor_config = "sensors.json";
+      loadJSON(sensor_config, function(data) {
+          sensors = JSON.parse(data);
+          console.log(sensors);
+          });
+    }
+    init();
+    </script>
+  </head>
+  <body onload="getFov(false);">
+    <!--SIDEBAR -->
+    <div class="sidebar" id="menu">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">x</a>
+      <template v-for="(mkey, mfr) in list">
+        <span>{{mfr}}</span>
+        <span class="entry" v-for="(skey, name) in mkey" v-on:click="setCamera(mfr,name)" v-on:mouseover="showInfo(mfr, name)">{{ name }}</span>
+      </template>
+      <div class="info_div">
+        <h3 class="camera_info" id="camera_sensor"></h3>
+        <table>
+        <tr>
+          <td>Width</td>
+          <td id="camera_width"></td>
+        </tr>
+        <tr>
+          <td>Height</td>
+          <td id="camera_height"></td>
+        </tr>
+        <tr>
+          <td>Pixel Size</td>
+          <td id="camera_pxsize"></td>
+        </tr>
+        <tr>
+          <td>Readout</td>
+          <td id="camera_readout"></td>
+        </tr>
+        <tr>
+          <td>Dynamic Range</td>
+          <td id="camera_dr"></td>
+        </tr>
+        </table>
+        <a class="camera_info" id="camera_datasheet">Datasheet</a>
+      </div>
+    </div>
+    <div id="menu_open">
+    <button class="openbtn" onclick="openMenu()">&#9776;</button>
+    <div class="anglefinder">
+    <div class="selection">
+      <h3>Lens Configuration</h3>
+      Sensor: <span id="sensor_name"></span><br>
+      Width (px):<input type="number" id="width" value=1920 min="1" onchange="getFov(false)"><br>
+      Height (px):<input type="number" id="height" value=1080 min="1" onchange="getFov(false)"><br>
+      Pixel size (&mu;m):<input type="number" id="px_size" value=3.0 min="1" onchange="getFov(false)"><br>
+      Focal Length (mm):<input type="number" id="flength" value=7.5 min="0" onchange="getFov()"><br>
+      Object of Interest (cm):<input type="number" id="obj" value=25 min="0" onchange="getFov()"><br>
+      Working Distance (cm):<input type="number" id="dist" value=100 min="0" onchange="getFov()"><br>
+      HFOV: <span id="hfov"></span><br>
+      VFOV: <span id="vfov"></span></br>
+      Pixels on object: <span id="pixels"></span></br>
+    </div>
+    <div class="viewer">
+      <table>
+          <tr>
+            <th>HFOV</th>
+            <td><canvas id="window_hfov" width=300 height=200></canvas></td>
+          </tr>
+          <tr>
+            <th>VFOV</th>
+            <td><canvas id="window_vfov" width=300 height=200></canvas></td>
+          </tr>
+      </table>
+    </div>
+    </div>
+    </div>
+    <script src="sidebar.js"></script>
+  </body>
+</html>
